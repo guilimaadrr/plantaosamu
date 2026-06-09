@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plantão Paulista</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">🚑</div>
+    <div>
+      <h1>Plantão Paulista</h1>
+      <p>Painel para copiar no WhatsApp</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="formulario">
+      <h2>Preencha os dados</h2>
+
+      <div id="ambulancias"></div>
+
+      <div class="botoes">
+        <button class="limpar" onclick="limparTudo()">Limpar tudo</button>
+        <button onclick="gerarMensagem()">Gerar mensagem</button>
+      </div>
+    </section>
+
+    <section class="preview">
+      <h2>Pré-visualização</h2>
+
+      <textarea id="mensagem" readonly></textarea>
+
+      <button class="whatsapp" onclick="copiarMensagem()">
+        Copiar para WhatsApp
+      </button>
+    </section>
+  </main>
+
+  <footer>
+    Simples, rápido e prático para o plantão.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
