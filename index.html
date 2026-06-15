@@ -1,48 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Plantão Paulista</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAMU Metropolitano</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <div class="logo">🚑</div>
-    <div>
-      <h1>Plantão Paulista</h1>
-      <p>Painel para copiar no WhatsApp</p>
-    </div>
-  </header>
+<header class="app-header">
+  <div class="logo">🚑</div>
 
-  <main>
-    <section class="formulario">
-      <h2>Preencha os dados</h2>
+  <div>
+    <h1>SAMU Metropolitano</h1>
+    <p>Painel operacional para WhatsApp</p>
+  </div>
+</header>
 
-      <div id="ambulancias"></div>
+<main class="menu-container">
 
-      <div class="botoes">
-        <button class="limpar" onclick="limparTudo()">Limpar tudo</button>
-        <button onclick="gerarMensagem()">Gerar mensagem</button>
+  <section class="menu-intro">
+    <h2>Olá!</h2>
+    <p>Selecione uma opção para continuar.</p>
+  </section>
+
+  <a href="plantao.html" class="menu-card">
+    <div class="card-info">
+      <div class="icone">🚑</div>
+
+      <div>
+        <h3>Plantão Paulista</h3>
+        <p>Preencha as equipes e copie para o WhatsApp.</p>
       </div>
-    </section>
+    </div>
 
-    <section class="preview">
-      <h2>Pré-visualização</h2>
+    <span class="seta">›</span>
+  </a>
 
-      <textarea id="mensagem" readonly></textarea>
+  <a href="ocorrencias.html" class="menu-card">
+    <div class="card-info">
+      <div class="icone">📋</div>
 
-      <button class="whatsapp" onclick="copiarMensagem()">
-        Copiar para WhatsApp
-      </button>
-    </section>
-  </main>
+      <div>
+        <h3>Ocorrências</h3>
+        <p>Registre e organize ocorrências do plantão.</p>
+      </div>
+    </div>
 
-  <footer>
-    Simples, rápido e prático para o plantão.
-  </footer>
+    <span class="seta">›</span>
+  </a>
 
-  <script src="script.js"></script>
+</main>
+
+<footer>
+  © 2026 SAMU Metropolitano
+</footer>
+
 </body>
 </html>
