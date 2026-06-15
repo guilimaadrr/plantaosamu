@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SAMU Metropolitano</title>
+  <title>Plantão Paulista</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,49 +12,42 @@
   <div class="logo">🚑</div>
 
   <div>
-    <h1>SAMU Metropolitano</h1>
-    <p>Painel operacional para WhatsApp</p>
+    <h1>Plantão Paulista</h1>
+    <p>Painel para copiar no WhatsApp</p>
   </div>
 </header>
 
-<main class="menu-container">
+<a href="index.html" class="voltar">⬅ Voltar ao menu</a>
 
-  <section class="menu-intro">
-    <h2>Olá!</h2>
-    <p>Selecione uma opção para continuar.</p>
+<main class="plantao-layout">
+  <section class="formulario">
+    <h2>Preencha os dados</h2>
+
+    <div id="ambulancias"></div>
+
+    <div class="botoes">
+      <button class="limpar" onclick="limparTudo()">Limpar tudo</button>
+      <button id="btnGerar" onclick="gerarMensagem()">
+  Gerar mensagem
+</button>
+    </div>
   </section>
 
-  <a href="plantao.html" class="menu-card">
-    <div class="card-info">
-      <div class="icone">🚑</div>
+  <section class="preview">
+    <h2>Pré-visualização</h2>
 
-      <div>
-        <h3>Plantão Paulista</h3>
-        <p>Preencha as equipes e copie para o WhatsApp.</p>
-      </div>
-    </div>
+    <textarea id="mensagem" readonly></textarea>
 
-    <span class="seta">›</span>
-  </a>
-
-  <a href="ocorrencias.html" class="menu-card">
-    <div class="card-info">
-      <div class="icone">📋</div>
-
-      <div>
-        <h3>Ocorrências</h3>
-        <p>Registre e organize ocorrências do plantão.</p>
-      </div>
-    </div>
-
-    <span class="seta">›</span>
-  </a>
-
+    <button class="whatsapp" onclick="copiarMensagem()">
+      Copiar para WhatsApp
+    </button>
+  </section>
 </main>
 
 <footer>
-  © 2026 SAMU Metropolitano
+  Simples, rápido e prático para o plantão.
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
