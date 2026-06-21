@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ocorrências - SAMU Metropolitano</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="app-header">
+  <div class="logo">📋</div>
+
+  <div>
+    <h1>Ocorrências</h1>
+    <p>Registro operacional para WhatsApp</p>
+  </div>
+</header>
+
+<main class="plantao-layout">
+
+  <a href="index.html" class="voltar">← Voltar ao menu</a>
+
+  <section class="card">
+    <h3>🚑 Dados da ocorrência</h3>
+
+    <div class="campo">
+      <label>Título da ocorrência</label>
+      <input
+        type="text"
+        id="titulo"
+        placeholder="Ex: ACIDENTE PE-90 – LIMOEIRO">
+    </div>
+
+    <div class="campo">
+      <label>Município</label>
+
+      <select id="municipio">
+        <option value="">Selecione o município</option>
+        <option>Abreu e Lima</option>
+        <option>Aliança</option>
+        <option>Araçoiaba</option>
+        <option>Buenos Aires</option>
+        <option>Cabo de Santo Agostinho</option>
+        <option>Camaragibe</option>
+        <option>Camutanga</option>
+        <option>Carpina</option>
+        <option>Chã de Alegria</option>
+        <option>Chã Grande</option>
+        <option>Condado</option>
+        <option>Ferreiros</option>
+        <option>Glória do Goitá</option>
+        <option>Goiana</option>
+        <option>Igarassu</option>
+        <option>Ilha de Itamaracá</option>
+        <option>Ipojuca</option>
+        <option>Itambé</option>
+        <option>Itapissuma</option>
+        <option>Itaquitinga</option>
+        <option>Jaboatão dos Guararapes</option>
+        <option>João Alfredo</option>
+        <option>Lagoa de Itaenga</option>
+        <option>Lagoa do Carro</option>
+        <option>Limoeiro</option>
+        <option>Macaparana</option>
+        <option>Moreno</option>
+        <option>Nazaré da Mata</option>
+        <option>Olinda</option>
+        <option>Paudalho</option>
+        <option>Paulista</option>
+        <option>Pombos</option>
+        <option>Recife</option>
+        <option>São Lourenço da Mata</option>
+        <option>São Vicente Férrer</option>
+        <option>Timbaúba</option>
+        <option>Tracunhaém</option>
+        <option>Vicência</option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label>Local</label>
+      <input
+        type="text"
+        id="local"
+        placeholder="Ex: PE-90, BR-101, Centro, Hospital Regional">
+    </div>
+  </section>
+
+  <section id="pacientes"></section>
+
+  <button
+    type="button"
+    class="botao-adicionar"
+    onclick="adicionarPaciente()">
+    ➕ Adicionar paciente
+  </button>
+
+  <section class="card">
+    <h3>ℹ️ Observação geral</h3>
+
+    <button
+      type="button"
+      class="botao-adicionar"
+      onclick="gerarObservacaoAutomatica()">
+      ✨ Gerar observação automática
+    </button>
+
+    <div class="campo">
+      <label>Resumo final</label>
+
+      <textarea
+        id="observacaoGeral"
+        placeholder="A observação pode ser gerada automaticamente após preencher os pacientes."></textarea>
+    </div>
+  </section>
+
+  <div class="acoes">
+    <button
+      type="button"
+      onclick="gerarMensagemOcorrencia()">
+      📄 Gerar mensagem
+    </button>
+
+    <button
+      type="button"
+      onclick="copiarMensagemOcorrencia()">
+      📲 Copiar para WhatsApp
+    </button>
+
+    <button
+      type="button"
+      class="limpar"
+      onclick="limparOcorrencia()">
+      🗑️ Limpar tudo
+    </button>
+  </div>
+
+  <section class="card">
+    <h3>📲 Mensagem gerada</h3>
+
+    <textarea
+      id="mensagemOcorrencia"
+      readonly
+      placeholder="A mensagem gerada aparecerá aqui..."></textarea>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 SAMU Metropolitano
+</footer>
+
+<script src="ocorrencias.js"></script>
+
+</body>
+</html>

@@ -78,7 +78,7 @@ body {
   margin-top: 4px;
 }
 
-/* MENU PRINCIPAL */
+/* MENU */
 
 .menu-container {
   flex: 1;
@@ -106,15 +106,11 @@ body {
   opacity: 0.10;
   pointer-events: none;
   z-index: -1;
-  will-change: transform;
 }
 
 .menu-intro {
   text-align: center;
   margin-bottom: 26px;
-  background: transparent;
-  box-shadow: none;
-  padding: 0;
 }
 
 .menu-intro h2 {
@@ -144,7 +140,7 @@ body {
   text-decoration: none;
   color: inherit;
   box-shadow: var(--sombra);
-  transition: transform var(--transicao), box-shadow var(--transicao), border-color var(--transicao);
+  transition: transform var(--transicao), box-shadow var(--transicao);
 }
 
 .menu-card:hover {
@@ -190,14 +186,9 @@ body {
   font-size: 34px;
   font-weight: bold;
   flex-shrink: 0;
-  transition: transform var(--transicao);
 }
 
-.menu-card:active .seta {
-  transform: translateX(3px);
-}
-
-/* PLANTÃO */
+/* LAYOUT */
 
 .voltar {
   display: inline-block;
@@ -211,7 +202,6 @@ body {
   font-size: 14px;
   font-weight: 700;
   box-shadow: 0 4px 12px rgba(0, 74, 173, 0.2);
-  transition: transform var(--transicao), opacity var(--transicao);
 }
 
 .voltar:active {
@@ -234,12 +224,6 @@ section {
   box-shadow: var(--sombra);
 }
 
-h2 {
-  color: var(--azul-800);
-  margin-bottom: 18px;
-  font-size: 20px;
-}
-
 .card {
   border: 1px solid var(--borda);
   border-left: 5px solid var(--azul-500);
@@ -249,11 +233,14 @@ h2 {
   background: #fbfdff;
 }
 
-.card h3 {
+.card h3,
+h2 {
   margin-bottom: 14px;
   color: var(--azul-800);
   font-size: 18px;
 }
+
+/* CAMPOS */
 
 .campo {
   margin-bottom: 12px;
@@ -268,7 +255,8 @@ h2 {
 }
 
 .campo input,
-.campo select {
+.campo select,
+.campo textarea {
   width: 100%;
   min-height: 46px;
   padding: 12px;
@@ -278,55 +266,15 @@ h2 {
   background: white;
   color: var(--texto);
   outline: none;
-  transition: border-color var(--transicao), box-shadow var(--transicao), background var(--transicao);
+  transition: border-color var(--transicao), box-shadow var(--transicao);
 }
 
 .campo input:focus,
 .campo select:focus,
+.campo textarea:focus,
 textarea:focus {
   border-color: var(--azul-500);
   box-shadow: 0 0 0 3px rgba(0, 110, 255, 0.12);
-}
-
-.botoes {
-  display: flex;
-  gap: 12px;
-  background: white;
-  padding-top: 10px;
-}
-
-button {
-  width: 100%;
-  min-height: 48px;
-  padding: 14px;
-  background: var(--azul-500);
-  color: white;
-  border: none;
-  border-radius: 14px;
-  font-size: 15px;
-  font-weight: 800;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 110, 255, 0.25);
-  transition: transform 120ms ease, box-shadow 180ms ease, background 180ms ease, opacity 180ms ease;
-  touch-action: manipulation;
-}
-
-button:active {
-  transform: scale(0.97);
-  box-shadow: 0 2px 8px rgba(0, 110, 255, 0.18);
-}
-
-.limpar {
-  background: white;
-  color: #e63946;
-  border: 1px solid #e63946;
-  box-shadow: none;
-}
-
-.whatsapp {
-  background: var(--verde);
-  margin-top: 15px;
-  box-shadow: 0 4px 12px rgba(18, 165, 56, 0.25);
 }
 
 textarea {
@@ -343,12 +291,57 @@ textarea {
   outline: none;
 }
 
-/* BOTÕES DA EQUIPE MOTO */
+.campo textarea {
+  min-height: 120px;
+  background: white;
+  border: 1px solid #cfd8e3;
+}
 
-.botoes-moto {
+/* BOTÕES */
+
+.botoes,
+.acoes {
   display: flex;
-  gap: 10px;
-  margin-bottom: 14px;
+  gap: 12px;
+  background: white;
+  padding: 12px;
+  border-radius: 16px;
+  box-shadow: var(--sombra);
+  margin-bottom: 16px;
+}
+
+button {
+  width: 100%;
+  min-height: 48px;
+  padding: 14px;
+  background: var(--azul-500);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 110, 255, 0.25);
+  transition: transform 120ms ease, box-shadow 180ms ease, background 180ms ease;
+  touch-action: manipulation;
+}
+
+button:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(0, 110, 255, 0.18);
+}
+
+.limpar {
+  background: white;
+  color: var(--vermelho);
+  border: 1px solid var(--vermelho);
+  box-shadow: none;
+}
+
+.whatsapp {
+  background: var(--verde);
+  margin-top: 15px;
+  box-shadow: 0 4px 12px rgba(18, 165, 56, 0.25);
 }
 
 .botao-adicionar {
@@ -356,6 +349,7 @@ textarea {
   color: var(--azul-700);
   border: 1px dashed var(--azul-500);
   box-shadow: none;
+  margin-bottom: 16px;
 }
 
 .botao-remover {
@@ -363,9 +357,38 @@ textarea {
   color: var(--vermelho);
   border: 1px dashed var(--vermelho);
   box-shadow: none;
+  margin-top: 8px;
 }
 
-/* EFEITO GERAR MENSAGEM */
+.botoes-moto {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+/* OCORRÊNCIAS */
+
+.paciente-card {
+  position: relative;
+  background: #ffffff;
+  border-left-color: var(--verde-sucesso);
+}
+
+.paciente-card h3 {
+  color: var(--verde-sucesso);
+}
+
+#pacientes {
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
+#mensagemOcorrencia {
+  min-height: 520px;
+}
+
+/* EFEITOS */
 
 .botao-gerando {
   background: var(--laranja) !important;
@@ -412,7 +435,6 @@ footer {
   }
 }
 
-
 /* MOBILE */
 
 @media (max-width: 900px) {
@@ -447,11 +469,13 @@ footer {
     border-radius: 18px;
   }
 
-  .botoes {
+  .botoes,
+  .acoes {
     flex-direction: column;
   }
 
-  textarea {
+  textarea,
+  #mensagemOcorrencia {
     min-height: 420px;
   }
 
@@ -468,10 +492,6 @@ footer {
 
   .menu-intro h2 {
     font-size: 28px;
-  }
-
-  .menu-intro p {
-    font-size: 14px;
   }
 
   .menu-card {
@@ -541,7 +561,7 @@ footer {
   }
 }
 
-/* PERFORMANCE / ACESSIBILIDADE */
+/* ACESSIBILIDADE */
 
 @media (prefers-reduced-motion: reduce) {
   * {
